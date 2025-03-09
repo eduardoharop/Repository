@@ -1,0 +1,203 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\eduar\OneDrive\Escritorio\Ph.D\First Year\Fall 2024\Econometrics\Homework 8\question2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 3 Dec 2024, 20:36:23
+{txt}
+{com}. 
+. *****************QUESTION 2**************************************
+. 
+. **************a)**************
+. sum z1 z2 z3 x1 x2 y
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 10}z1 {c |}{res}         50    2.812149    1.014375   1.310122   5.040522
+{txt}{space 10}z2 {c |}{res}         50    5.730062    2.572651   1.402214    11.4219
+{txt}{space 10}z3 {c |}{res}         50    1.555324    .9448074  -.8055452   4.244133
+{txt}{space 10}x1 {c |}{res}         50    8.169578     3.71559   3.436019      20.82
+{txt}{space 10}x2 {c |}{res}         50    3.274572    5.877273   -12.0797   20.14363
+{txt}{hline 13}{c +}{hline 57}
+{space 11}y {c |}{res}         50    13.85444    8.961544  -1.406152   37.47431
+{txt}
+{com}. 
+. **************b)**************
+. reg y x1 x2
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        50
+{txt}{hline 13}{c +}{hline 34}   F(2, 47)        = {res}    51.10
+{txt}       Model {c |} {res} 2695.46276         2  1347.73138   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 1239.69126        47  26.3764098   {txt}R-squared       ={res}    0.6850
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6716
+{txt}       Total {c |} {res} 3935.15402        49  80.3092658   {txt}Root MSE        =   {res} 5.1358
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}x1 {c |}{col 14}{res}{space 2} 1.602893{col 26}{space 2} .2048937{col 37}{space 1}    7.82{col 46}{space 3}0.000{col 54}{space 4}   1.1907{col 67}{space 3} 2.015085
+{txt}{space 10}x2 {c |}{col 14}{res}{space 2} 1.069709{col 26}{space 2}  .129533{col 37}{space 1}    8.26{col 46}{space 3}0.000{col 54}{space 4} .8091217{col 67}{space 3} 1.330295
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -2.74335{col 26}{space 2} 1.971893{col 37}{space 1}   -1.39{col 46}{space 3}0.171{col 54}{space 4}-6.710288{col 67}{space 3} 1.223587
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. **************c)**************
+. ivreg y x1 (x2 = z1)
+
+{txt}Instrumental variables 2SLS regression
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}        50
+{txt}{hline 13}{c +}{hline 34}   F(2, 47)        = {res}     3.72
+{txt}       Model {c |} {res}-1845.06847         2 -922.534235   {txt}Prob > F        ={res}    0.0315
+{txt}    Residual {c |} {res} 5780.22249        47  122.983457   {txt}R-squared       ={res}         .
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}         .
+{txt}       Total {c |} {res} 3935.15402        49  80.3092658   {txt}Root MSE        =   {res}  11.09
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}x2 {c |}{col 14}{res}{space 2}-.6298102{col 26}{space 2} 1.587024{col 37}{space 1}   -0.40{col 46}{space 3}0.693{col 54}{space 4}-3.822492{col 67}{space 3} 2.562871
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} .8854061{col 26}{space 2}  .794162{col 37}{space 1}    1.11{col 46}{space 3}0.271{col 54}{space 4}-.7122418{col 67}{space 3} 2.483054
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 8.683407{col 26}{space 2} 11.33361{col 37}{space 1}    0.77{col 46}{space 3}0.447{col 54}{space 4}-14.11688{col 67}{space 3}  31.4837
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 12 60}Endogenous: {res:x2}{p_end}
+{p 0 12 60}Exogenous:{space 1} {res:x1 z1}{p_end}
+
+{com}. 
+. **************d)**************
+. ivreg y x1 (x2 = z2)
+
+{txt}Instrumental variables 2SLS regression
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}        50
+{txt}{hline 13}{c +}{hline 34}   F(2, 47)        = {res}     2.78
+{txt}       Model {c |} {res}-3780.81145         2 -1890.40573   {txt}Prob > F        ={res}    0.0725
+{txt}    Residual {c |} {res} 7715.96548        47  164.169478   {txt}R-squared       ={res}         .
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}         .
+{txt}       Total {c |} {res} 3935.15402        49  80.3092658   {txt}Root MSE        =   {res} 12.813
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}x2 {c |}{col 14}{res}{space 2}-.9600073{col 26}{space 2} 3.186085{col 37}{space 1}   -0.30{col 46}{space 3}0.765{col 54}{space 4}-7.369583{col 67}{space 3} 5.449568
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} .7460067{col 26}{space 2} 1.432445{col 37}{space 1}    0.52{col 46}{space 3}0.605{col 54}{space 4}-2.135701{col 67}{space 3} 3.627714
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  10.9035{col 26}{space 2} 21.87169{col 37}{space 1}    0.50{col 46}{space 3}0.620{col 54}{space 4}-33.09666{col 67}{space 3} 54.90366
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 12 60}Endogenous: {res:x2}{p_end}
+{p 0 12 60}Exogenous:{space 1} {res:x1 z2}{p_end}
+
+{com}. 
+. **************e)**************
+. ivreg y x1 (x2 = z3)
+
+{txt}Instrumental variables 2SLS regression
+
+      Source {c |}       SS           df       MS      Number of obs   ={res}        50
+{txt}{hline 13}{c +}{hline 34}   F(2, 47)        = {res}    11.18
+{txt}       Model {c |} {res} 2044.77358         2  1022.38679   {txt}Prob > F        ={res}    0.0001
+{txt}    Residual {c |} {res} 1890.38044        47  40.2208605   {txt}R-squared       ={res}    0.5196
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.4992
+{txt}       Total {c |} {res} 3935.15402        49  80.3092658   {txt}Root MSE        =   {res}  6.342
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}x2 {c |}{col 14}{res}{space 2} .4263406{col 26}{space 2} 1.658917{col 37}{space 1}    0.26{col 46}{space 3}0.798{col 54}{space 4} -2.91097{col 67}{space 3} 3.763651
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} 1.331282{col 26}{space 2} .7415797{col 37}{space 1}    1.80{col 46}{space 3}0.079{col 54}{space 4}-.1605843{col 67}{space 3} 2.823148
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  1.58235{col 26}{space 2} 11.36571{col 37}{space 1}    0.14{col 46}{space 3}0.890{col 54}{space 4} -21.2825{col 67}{space 3}  24.4472
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 12 60}Endogenous: {res:x2}{p_end}
+{p 0 12 60}Exogenous:{space 1} {res:x1 z3}{p_end}
+
+{com}. 
+. **************f)**************
+. ivregress 2sls y x1 (x2 = z1 z2 z3)
+{res}
+{txt}{col 1}Instrumental-variables 2SLS regression{col 51}Number of obs{col 67}= {res}        50
+{txt}{col 1}{col 51}Wald chi2({res}2{txt}){col 67}= {res}      9.74
+{txt}{col 1}{col 51}Prob > chi2{col 67}= {res}    0.0077
+{txt}{col 1}{col 51}R-squared{col 67}= {res}         .
+{txt}{col 51}Root MSE{col 67}=    {res} 9.6807
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}           y{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}x2 {c |}{col 14}{res}{space 2}-.4108979{col 26}{space 2} .9947762{col 37}{space 1}   -0.41{col 46}{space 3}0.680{col 54}{space 4}-2.360623{col 67}{space 3} 1.538828
+{txt}{space 10}x1 {c |}{col 14}{res}{space 2} .9778244{col 26}{space 2} .5611663{col 37}{space 1}    1.74{col 46}{space 3}0.081{col 54}{space 4}-.1220413{col 67}{space 3}  2.07769
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 7.211544{col 26}{space 2} 7.473641{col 37}{space 1}    0.96{col 46}{space 3}0.335{col 54}{space 4}-7.436523{col 67}{space 3} 21.85961
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 12 60}Endogenous: {res:x2}{p_end}
+{p 0 12 60}Exogenous:{space 1} {res:x1 z1 z2 z3}{p_end}
+
+{com}. 
+. **************g)**************
+. dis "Generally, the inclusion of any instrument reduces the impact of x2 by reducing the estimate value of its coefficient. Moreover, estimates of x2 including z1,z2,z3 or all of them are not that different, probably suggesting that they might be similar variables or concepts measuring a similar trait"
+{res}Generally, the inclusion of any instrument reduces the impact of x2 by reducing the estimate value of its coefficient. Moreover, estimates of x2 including z1,z2,z3 or all of them are not that different, probably suggesting that they might be similar variables or concepts measuring a similar trait
+{txt}
+{com}. 
+. **************h)**************
+. dis "E[X|e] = 0"
+{res}E[X|e] = 0
+{txt}
+{com}. 
+. **************i)**************
+. estat endogenous
+
+{txt}{col 3}Tests of endogeneity
+{col 3}H0: Variables are exogenous
+
+{col 3}Durbin (score) chi2({res}1{txt}){col 35}={res}{col 37} 8.91019{txt}  (p = {res}0.0028{txt})
+{col 3}Wu-Hausman F({res}1{txt},{res}46{txt}){col 35}={res}{col 37} 9.97495{txt}  (p = {res}0.0028{txt})
+
+{com}. di "The p value is less than 0.05, so we reject the null hypothesis, suggesting that there is endogeneity in x2"
+{res}The p value is less than 0.05, so we reject the null hypothesis, suggesting that there is endogeneity in x2
+{txt}
+{com}. 
+. **************j)**************
+. dis "E[W|e] = 0"
+{res}E[W|e] = 0
+{txt}
+{com}. 
+. **************k)**************
+. estat overid
+
+{txt}{col 3}Tests of overidentifying restrictions:
+
+{col 3}Sargan (score) chi2({res}2{txt}){col 26}={res}{col 28} .129489{txt}{col 38}(p = {res}0.9373{txt})
+{col 3}Basmann chi2({res}2{txt}){col 26}={res}{col 28} .116842{txt}{col 38}(p = {res}0.9433{txt})
+
+{com}. di "The p value is bigger than 0.05, so we do not reject the null hypothesis, suggesting that all instruments are valid, which means that the instruments are exogenous"
+{res}The p value is bigger than 0.05, so we do not reject the null hypothesis, suggesting that all instruments are valid, which means that the instruments are exogenous
+{txt}
+{com}. 
+. **************l)**************
+. reg x2 z1 z2 z3
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        50
+{txt}{hline 13}{c +}{hline 34}   F(3, 46)        = {res}     0.66
+{txt}       Model {c |} {res} 69.6782885         3  23.2260962   {txt}Prob > F        ={res}    0.5819
+{txt}    Residual {c |} {res}  1622.8962        46  35.2803521   {txt}R-squared       ={res}    0.0412
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}   -0.0214
+{txt}       Total {c |} {res} 1692.57448        49  34.5423364   {txt}Root MSE        =   {res} 5.9397
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          x2{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}z1 {c |}{col 14}{res}{space 2}-.7190714{col 26}{space 2} .8556882{col 37}{space 1}   -0.84{col 46}{space 3}0.405{col 54}{space 4}-2.441482{col 67}{space 3}  1.00334
+{txt}{space 10}z2 {c |}{col 14}{res}{space 2} .3500986{col 26}{space 2} .3785206{col 37}{space 1}    0.92{col 46}{space 3}0.360{col 54}{space 4}-.4118239{col 67}{space 3} 1.112021
+{txt}{space 10}z3 {c |}{col 14}{res}{space 2}-.6635173{col 26}{space 2} 1.010904{col 37}{space 1}   -0.66{col 46}{space 3}0.515{col 54}{space 4}-2.698362{col 67}{space 3} 1.371327
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 4.322605{col 26}{space 2} 3.531196{col 37}{space 1}    1.22{col 46}{space 3}0.227{col 54}{space 4}-2.785324{col 67}{space 3} 11.43053
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. di "The F test is 0.66, suggesting that all regressors are not jointly significant. So we have weak instruments."
+{res}The F test is 0.66, suggesting that all regressors are not jointly significant. So we have weak instruments.
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\eduar\OneDrive\Escritorio\Ph.D\First Year\Fall 2024\Econometrics\Homework 8\question2.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 3 Dec 2024, 20:36:24
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
