@@ -1,1 +1,44 @@
-Folder with the Macroeconometrics 2 course project
+Folder with the Macroeconometrics 2 course project:
+
+ 
+Data Preparation
+Collected daily data (2014-2023) for:
+  Bitcoin (BTC-USD)
+  Major indices (DJI, IXIC, SPX)
+  Calculated log returns
+  Aligned dates across all series (2,333 observations)
+
+2. Exploratory Analysis
+Visualizations:
+  Price trends and return distributions (facetted plots)
+  Histograms and boxplots of returns
+Descriptive statistics:
+  Bitcoin shows highest volatility (SD = 0.045 vs 0.011-0.013 for indices)
+  Negative skewness (-0.35) and excess kurtosis (11.9) in Bitcoin
+
+3. VAR Modeling
+Stationarity confirmed via ADF tests (p < 0.01 for all returns)
+Optimal lag selection: 4 lags (AIC/BIC criteria)
+VAR(4) estimation reveals:
+  Significant Bitcoin autocorrelation (L1-L4: 0.07 to -0.05)
+  DJI/IXIC/SPX show stronger persistence
+
+4. Diagnostic Checks
+No serial correlation (Portmanteau test p = 0.35)
+Non-normal residuals (Jarque-Bera p < 0.001)
+ARCH effects present (multivariate test p < 0.001)
+Stable model (CUSUM test within bounds)
+
+5. Structural Analysis (SVAR)
+Recursive identification via Cholesky decomposition:
+Impulse Response Functions show:
+  Bitcoin shocks have persistent self-effects (40+ days)
+  Limited impact on indices (max 0.2% response in DJI)
+  Index shocks quickly dissipate in Bitcoin
+
+Key Technical Components:
+Used vars package for VAR/SVAR implementation
+Formatted results with stargazer and rempsyc for readability
+Conducted comprehensive causality/structural analysis
+Employs modern tidyverse workflow for data manipulation
+This analysis demonstrates Bitcoin's relative isolation from traditional market dynamics while highlighting its unique volatility characteristics.
