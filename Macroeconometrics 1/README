@@ -1,1 +1,33 @@
-Files for the Macroeconometrics 1 course assignments
+Files for the Macroeconometrics 1 course assignments:
+
+1. Data Preparation & Exploration
+Loaded macroeconomic dataset containing:
+HICP (Harmonized Index of Consumer Prices)
+Energy price index (HICPenergy)
+Economic output
+Initial visualizations:
+  Time series plots of raw series
+  ACF/PACF analysis showing persistent autocorrelation
+
+2. Stationarity Analysis
+Conducted Dickey-Fuller tests:
+  Original HICP series: non-stationary (p=0.99)
+  1st difference: Stationary (p=0.0002, I(1))
+  Energy prices became stationary after 1st differencing
+  Output required 2nd differencing (I(2))
+
+3. Transformations & Modeling
+Created logarithmic transformations:
+  df["lHICP"] = np.log(df['HICP'])
+  df["lHICPenergy"] = np.log(df['HICPenergy'])
+  df["loutput"] = np.log(df['output'])
+Estimated ARDL models:
+  Differenced specification (I(1)): ARDL(1,1,2)
+  Log-level specification: ARDL(2,2,2)
+Cointegration test between log energy prices and HICP changes:
+  p-value=0.38 ➔ No cointegration relationship
+
+4. Model Validation
+Final training set: First 239 observations
+Preserved test set for out-of-sample evaluation
+Compared specifications using information criteria
