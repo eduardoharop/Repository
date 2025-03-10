@@ -1,7 +1,7 @@
 Project for the Time Series Course:
 
 The code is a time series analysis project in Python that forecasts Stockholm's daily mean temperature using SARIMA and Exponential Smoothing models. 
-It loads data from an Excel file, cleans it by selecting data from the 1900s, and resamples it to monthly averages. \
+It loads data from an Excel file, cleans it by selecting data from the 1900s, and resamples it to monthly averages.
 The time series is decomposed into trend, seasonal, and residual components. Stationarity is tested using the Augmented Dickey-Fuller (ADF) test, and both seasonal and regular differences are applied to stabilize the series. 
 Autocorrelation (ACF) and partial autocorrelation (PACF) plots are generated to identify model parameters. 
 Three SARIMA models are fitted with different orders and seasonal components, and their residuals are analyzed using the Ljung-Box test to check for autocorrelation.
