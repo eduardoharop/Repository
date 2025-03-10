@@ -1,1 +1,40 @@
-Folder with the R files of the project 
+Folder with the R files of the project:
+
+1. Data Preparation & Exploration
+  Loaded Portuguese real estate spatial data (278 observations)
+Created derived variables:
+  Area-adjusted metrics (e.g., newhouseparea = new houses per km²)
+  Economic indicators (e.g., unemploymentrate)
+Visualized key variables:
+  Choropleth map of median values per m² (medvalsqm2)
+  Correlation matrix of all variables
+
+2. Spatial Dependency Analysis
+Created Queen contiguity weights matrix
+Calculated global Moran's I = 0.44 (p<0.001), confirming spatial autocorrelation
+Conducted Lagrange Multiplier tests:
+  Both lag (RLMlag = 27.7) and error (RLMerror = 4.9) dependencies significant
+  Robust LM tests favored spatial lag model
+
+3. Model Comparison
+Tested 5 spatial econometric models:
+  OLS: Showed spatial autocorrelation in residuals (Moran's I p<0.001)
+  SEM (Spatial Error): Hausman test rejected (χ²=21.3, p=0.002)
+  SLX (Spatial Lag of X): LR test vs SDM p<0.001
+  SAR (Spatial Autoregressive): ρ=0.32 (p<0.001)
+  SDM (Spatial Durbin): Best fit via LR tests
+SDM coefficients showed:
+  Positive spatial spillovers (ρ=0.31)
+  Significant local effects: Population density (-0.14), tourism (+0.18)
+
+4. Diagnostics
+Heteroskedasticity present (BP test p<0.001)
+Significant spatial impacts:
+  Direct effects: popdens (-0.12), touracc (+0.15)
+  Indirect effects: newhouse (-0.09), active (+0.07)
+
+5. Output
+Exported modified shapefile for Stata compatibility
+
+Key findings: Housing values show strong spatial interdependence, with tourism activity and population dynamics driving both local and neighboring area prices
+This analysis demonstrates the importance of accounting for spatial effects in real estate valuation models, with SDM providing the best fit for this dataset.
