@@ -1,1 +1,39 @@
-Files for the Time Series Analysis course project.
+Files for the Time Series Analysis course project:
+
+Part 1: Univariate Analysis
+Data Preparation:
+  Fetched daily stock prices (2018-2023) and calculated log returns
+  Visualized price trends and return distributions with histograms/boxplots
+  Performed descriptive statistics and outlier detection
+Stationarity & Models:
+  Conducted ADF tests (log prices non-stationary, returns stationary)
+  Fit ARIMA models:
+  MSFT: ARIMA(1,0,4)
+  WMT: ARIMA(0,0,4)
+  Residual diagnostics revealed volatility clustering
+GARCH Modeling:
+  Implemented GARCH(1,1) with normal and t-distributed errors
+  Model selection using information criteria
+  Diagnostic checks (ACF/PACF of squared residuals, QQ-plots)
+  Forecasted volatility 2 days ahead
+Stylized Facts:
+Tested for zero mean returns (significant for WMT)
+Evaluated leverage effects (GJR-GARCH) and risk premia (GARCH-M)
+
+Part 2: Risk Analysis
+Value-at-Risk (VaR):
+  Historical VaR (1-5 day horizons)
+  Parametric VaR using:
+  Simple GARCH(1,1) with normal errors
+  ARMA-GARCH models
+  Student-t distributed innovations
+  Portfolio VaR using correlation-based approach
+Key Results:
+  VaR estimates scaled to $10M portfolio
+  Student-t models showed better fit for fat tails
+  Multivariate approach incorporated correlation (ρ = 0.19)
+  Implementation Highlights:
+  Used rugarch for GARCH modeling and forecasting
+  Automated model selection with custom auto.garch function
+  Generated publication-ready tables with stargazer
+  Comprehensive visual diagnostics (ACF/PACF, QQ-plots, volatility forecasts)
