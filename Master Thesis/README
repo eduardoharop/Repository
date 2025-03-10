@@ -1,1 +1,11 @@
-Python file for my master thesis 
+Python file for my master thesis:
+
+The code is an econometric analysis using Python and the econml library to estimate causal effects through instrumental variable (IV) models. 
+It loads a dataset from a Stata file and defines key variables: y (outcome variable - years of education), t (treatment - teen pregnancy), and z (instrument - menarche). 
+The code also defines covariates such as age, contraceptive use, and demographic indicators. Several econometric models are implemented, including OrthoIV (using both linear regression and logistic regression for treatment modeling), DMLIV, and DRIV (with both linear and forest-based models). T
+he code tests different combinations of controls and covariates, evaluates average treatment effects (ATE), and computes confidence intervals for the predicted effects.
+
+The code also includes hyperparameter tuning for machine learning models like Random Forest and XGBoost using RandomizedSearchCV and BayesSearchCV to optimize model performance. 
+It applies train-test splits to assess model generalization and fits Random Forest and XGBoost models to predict both treatment and outcome variables. 
+Finally, it visualizes the estimated treatment effects using matplotlib and generates SHAP (SHapley Additive exPlanations) values to interpret model outputs. 
+The focus is on understanding the causal effect of teen pregnancy on years of education, accounting for potential confounding factors through instrumental variable methods.
